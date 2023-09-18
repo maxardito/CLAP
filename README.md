@@ -1,10 +1,21 @@
-# CLAP
+# CLAP-Interrogator
+
+The CLAP-Interrogator is a brute-force audio-text-tagging algorithm based on the Contrastive Language-Audio Pretraining (CLAP) algorithm. Having mined music reviews for keywords, the Interrogator associates an audio clip with those keywords to form a bag-of-phrases description of that audio clip.
+
+## Keywords
+
+Download the keywords with the following `curl` command.
+```console
+curl -L keywords.txt https://www.dropbox.com/scl/fi/l7cke7vb4celtyxfgi6dj/keywords.txt?rlkey=456e3ds2ihgpb7tcilfmzlotf&dl=1
+```
+
+## CLAP
 
 CLAP (Contrastive Language-Audio Pretraining) is a neural network model that learns acoustic concepts from natural language supervision. It achieves SoTA in “Zero-Shot” classification, Audio-Text & Text-Audio Retrieval, and in some datasets when finetuned.
 
 <img width="832" alt="clap_diagram_v3" src="https://user-images.githubusercontent.com/26778834/199842089-39ef6a2e-8abb-4338-bdfe-680abab70f53.png">
 
-## Setup
+### Setup
 
 You are required to just install the dependencies: `pip install -r requirements.txt` using Python 3 to get started.
 
@@ -18,11 +29,11 @@ conda activate clap && \
 pip install -r requirements.txt
 ```
 
-## CLAP weights
+### CLAP weights
 Request CLAP weights: [Pretrained Model \[Zenodo\]](https://zenodo.org/record/7312125#.Y22vecvMIQ9)
 
 
-## Usage
+### Usage
 
 Please take a look at `src/examples` for usage examples. 
 
@@ -48,7 +59,7 @@ audio_embeddings = clap_model.get_audio_embeddings(file_paths: List[str])
 sim = clap_model.compute_similarity(audio_embeddings, text_embeddings)
 ```
 
-## Examples
+### Examples
 To run zero-shot evaluation on the ESC50 dataset or a single audio file from ESC50, check `CLAP\src\`. For zero-shot evaluation on the ESC50 dataset:
 ```bash
 > cd src && python zero_shot_classification.py
@@ -58,7 +69,7 @@ Output
 ESC50 Accuracy: 82.6%
 ```
 
-## Citation
+### Citation
 https://arxiv.org/pdf/2206.04769.pdf
 ```
 @article{elizalde2022clap,
@@ -69,7 +80,7 @@ https://arxiv.org/pdf/2206.04769.pdf
 }
 ```
 
-## Contributing
+### Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
 Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
@@ -83,7 +94,7 @@ This project has adopted the [Microsoft Open Source Code of Conduct](https://ope
 For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
 contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
 
-## Trademarks
+### Trademarks
 
 This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft 
 trademarks or logos is subject to and must follow 
