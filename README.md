@@ -6,8 +6,19 @@ The CLAP-Interrogator is a brute-force audio-text-tagging algorithm based on the
 
 Download the keywords with the following `curl` command.
 ```console
-curl -L keywords.txt https://www.dropbox.com/scl/fi/l7cke7vb4celtyxfgi6dj/keywords.txt?rlkey=456e3ds2ihgpb7tcilfmzlotf&dl=1
+curl -L -o keywords.txt https://www.dropbox.com/scl/fi/l7cke7vb4celtyxfgi6dj/keywords.txt?rlkey=456e3ds2ihgpb7tcilfmzlotf&dl=1
 ```
+
+## Audio Data
+
+Get your hands on some audio data:
+
+```console 
+curl -L -o example.zip https://www.dropbox.com/scl/fi/mkvxn7xfl17kpctbl2zwt/example.zip?rlkey=96urcgtm0h3xmvmq8quxzu1jn&dl=1
+```
+
+
+--------------
 
 ## CLAP
 
